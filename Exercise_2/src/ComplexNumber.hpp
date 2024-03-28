@@ -4,8 +4,8 @@
 using namespace std;
 
 struct ComplexNumber{
-    int parteReale;
-    int parteImmaginaria;
+    float parteReale;
+    float parteImmaginaria;
 
     ComplexNumber() = default; // se non passo argomenti passo questo
 
