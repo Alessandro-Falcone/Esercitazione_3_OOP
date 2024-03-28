@@ -4,28 +4,35 @@
 
 using namespace std;
 
-void trasformazioneConiugato(float& parteRea, float& parteImm){
+void Coniugato(float& parteRea, float& parteImm){
     parteRea = parteRea;
     parteImm = -parteImm;
 }
 
 int main()
 {
-    float sumReale = 0;
-    float sumImmaginaria = 0;
+    // float sumReale = 0;
+    // float sumImmaginaria = 0;
+    float a = 1./4.;
+    float b = sqrt(2);
+    float c = 2.34;
+    float d = 3.45555;
 
-    ComplexNumber pCoNum1(1, 2);
-    ComplexNumber pCoNum2(3.94, 2.09);
+    ComplexNumber pCoNum1(a, b);
+    ComplexNumber pCoNum2(c, d);
 
-    sumReale = pCoNum1.parteReale + pCoNum2.parteReale;
-    sumImmaginaria = pCoNum1.parteImmaginaria + pCoNum2.parteImmaginaria;
+    ComplexNumber sumComplessa = pCoNum1 + pCoNum2;
 
-    trasformazioneConiugato(pCoNum1.parteReale, pCoNum1.parteImmaginaria);
+    // sumReale = pCoNum1.parteReale + pCoNum2.parteReale;
+    // sumImmaginaria = pCoNum1.parteImmaginaria + pCoNum2.parteImmaginaria;
 
-    cout << "coniugato: " << pCoNum1.parteReale <<  pCoNum1.parteImmaginaria << "i"  << endl;
+    cout << "numero: " << pCoNum1.parteReale << "+" << pCoNum1.parteImmaginaria << "i"  << endl;
+    Coniugato(pCoNum1.parteReale, pCoNum1.parteImmaginaria);
 
-    cout << sumReale << endl;
-    cout << sumImmaginaria << endl;
+    cout << "suo coniugato: " << pCoNum1.parteReale <<  pCoNum1.parteImmaginaria << "i"  << endl;
+
+    cout << setprecision(9) << sumComplessa << endl;
+    // cout << setprecision(9) << sumImmaginaria << endl;
 
     return 0;
 }

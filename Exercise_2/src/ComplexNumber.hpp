@@ -15,7 +15,7 @@ struct ComplexNumber{
         // inizializza gli attributi
     }
 
-    float to_float(); // è un metodo va definito all'interno della classe
+    // float to_float(); // è un metodo va definito all'interno della classe
 
     // visibilità a 360 gradi
 };
