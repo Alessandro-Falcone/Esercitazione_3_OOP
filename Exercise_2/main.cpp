@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "ComplexNumber.hpp"
 
 using namespace std;
@@ -6,12 +7,10 @@ using namespace std;
 int main()
 {
     ComplexNumber pCoNum1(1.2, 2.3);
-    ComplexNumber pCoNum2(3.5, 2.0);
-    float sumReale = pCoNum1.to_float() + pCoNum2.to_float();
+    ComplexNumber pCoNum2(3.9, 2.0);
+    float sumReale = (float) (pCoNum1.parteReale + pCoNum2.parteReale);
 
-
-
-    cout << sumReale << endl;
+    cout << fixed << setprecision(2) << sumReale << endl;
     cout << "This is an example" << endl;
     return 0;
 }

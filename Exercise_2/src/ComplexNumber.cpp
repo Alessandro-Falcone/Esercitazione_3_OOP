@@ -3,13 +3,9 @@
 
 using namespace std;
 
-
 float ComplexNumber::to_float(){
     return float(parteReale);
 }
-
-
-
 
 ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
     // // non prevedono copie
