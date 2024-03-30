@@ -15,7 +15,7 @@ struct ComplexNumber{
         // inizializza gli attributi
     }
 
-    // float to_float(); // è un metodo va definito all'interno della classe
+    // è un metodo va definito all'interno della classe
 
     // visibilità a 360 gradi
 };
@@ -23,4 +23,6 @@ struct ComplexNumber{
 ostream& operator << (ostream& os, const ComplexNumber& pCoNum);
 
 ComplexNumber operator+(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNum2);
+
+ComplexNumber operator==(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNum2);
 
