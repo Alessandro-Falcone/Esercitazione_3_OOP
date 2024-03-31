@@ -11,10 +11,10 @@ void Coniugato(float& parteRea, float& parteImm){
 
 int main()
 {
-    float a = 0.534455;
-    float b = 0.356668;
-    float c = 0.534455;
-    float d = 0.356668;
+    float a = sqrt(2);
+    float b = 0.4;
+    float c = sqrt(2);
+    float d = 0.9;
 
     ComplexNumber pCoNum1(a, b);
     ComplexNumber pCoNum2(c, d);
@@ -30,7 +30,7 @@ int main()
     cout << "suo coniugato: " << pCoNum1.parteReale <<  pCoNum1.parteImmaginaria << "i"  << endl;
 
     cout << setprecision(7) << sommaComplessa << endl;
-    cout << setprecision(6) << uguaglianza << endl;
+    cout << setprecision(7) << uguaglianza << endl;
 
     return 0;
 }
