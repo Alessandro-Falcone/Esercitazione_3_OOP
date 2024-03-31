@@ -1,20 +1,20 @@
 #include <iostream>
 #include <iomanip>
 #include "ComplexNumber.hpp"
+#include <math.h>
 
 using namespace std;
 
-void Coniugato(float& parteRea, float& parteImm){
+void coniugato(float& parteRea, float& parteImm){
     parteRea = parteRea;
     parteImm = -parteImm;
 }
 
-int main()
-{
-    float a = sqrt(2);
-    float b = 0.4;
-    float c = sqrt(2);
-    float d = 0.9;
+int main(){
+    float a = -0.45;
+    float b = 0;
+    float c = 0.45;
+    float d = -0.24;
 
     ComplexNumber pCoNum1(a, b);
     ComplexNumber pCoNum2(c, d);
@@ -23,11 +23,17 @@ int main()
 
     ComplexNumber uguaglianza = (pCoNum1 == pCoNum2);
 
-    cout << "numero: " << pCoNum1.parteReale << "+" << pCoNum1.parteImmaginaria << "i"  << endl;
+    cout << setprecision(7) << "numero: " << pCoNum1.parteReale << setprecision(7) << pCoNum1.parteImmaginaria << "i"  << endl;
+    coniugato(pCoNum1.parteReale, pCoNum1.parteImmaginaria);
 
-    Coniugato(pCoNum1.parteReale, pCoNum1.parteImmaginaria);
+    if(pCoNum1.parteImmaginaria < 0){
+        cout << setprecision(7) << "suo coniugato: " << pCoNum1.parteReale << setprecision(7) << pCoNum1.parteImmaginaria << "i"  << endl;
+    }else if(pCoNum1.parteImmaginaria > 0){
+        cout << setprecision(7) << "suo coniugato: " << pCoNum1.parteReale << "+" << setprecision(7) << pCoNum1.parteImmaginaria << "i"  << endl;
+    }else if(pCoNum1.parteImmaginaria == 0){
+        cout << "suo coniugato: " << setprecision(7) << abs(pCoNum1.parteImmaginaria) << endl;
+    }
 
-    cout << "suo coniugato: " << pCoNum1.parteReale <<  pCoNum1.parteImmaginaria << "i"  << endl;
 
     cout << setprecision(7) << sommaComplessa << endl;
     cout << setprecision(7) << uguaglianza << endl;
