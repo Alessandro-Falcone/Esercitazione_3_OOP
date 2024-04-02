@@ -1,19 +1,22 @@
 #include "ComplexNumber.hpp"
 #include <iostream>
+#include <iomanip>
 #include <math.h>
 
 using namespace std;
 
+namespace ComplexNumberLibrary{
+
 ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
     // non prevedono copie
     if(pCoNum.parteImmaginaria > 0){
-        os << pCoNum.parteReale << "+" << pCoNum.parteImmaginaria << "i"; // non si mette << endl mai
+        os << setprecision(7) << pCoNum.parteReale << "+" << setprecision(7) << pCoNum.parteImmaginaria << "i"; // non si mette << endl mai
     }
     else if(pCoNum.parteImmaginaria < 0){
-        os << pCoNum.parteReale << pCoNum.parteImmaginaria << "i";
+        os << setprecision(7) << pCoNum.parteReale << setprecision(7) << pCoNum.parteImmaginaria << "i";
     }
     else if(pCoNum.parteImmaginaria == 0){
-        os << pCoNum.parteReale;
+        os << setprecision(7) << pCoNum.parteReale;
     }
 
     return os;
@@ -22,14 +25,7 @@ ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
 ComplexNumber operator+(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNum2){
     // non prevedono copie
 
-    float pRe = 0;
-    float pIm = 0;
-
-    pRe = pCoNum1.parteReale + pCoNum2.parteReale;
-    pIm = pCoNum1.parteImmaginaria + pCoNum2.parteImmaginaria;
-
-    ComplexNumber pCoNum(pRe, pIm);
-
+    ComplexNumber pCoNum(pCoNum1.parteReale + pCoNum2.parteReale, pCoNum1.parteImmaginaria + pCoNum2.parteImmaginaria);
     return pCoNum;
 }
 
@@ -62,5 +58,6 @@ ComplexNumber operator==(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNu
 
     ComplexNumber pCoNum(pRe, pIm);
     return pCoNum;
+}
 }
 

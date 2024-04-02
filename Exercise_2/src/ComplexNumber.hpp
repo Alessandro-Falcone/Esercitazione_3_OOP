@@ -3,6 +3,8 @@
 
 using namespace std;
 
+namespace ComplexNumberLibrary{
+
 struct ComplexNumber{
     float parteReale;
     float parteImmaginaria;
@@ -26,3 +28,4 @@ ComplexNumber operator+(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNu
 
 ComplexNumber operator==(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNum2);
 
+}
