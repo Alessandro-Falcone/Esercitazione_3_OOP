@@ -7,28 +7,16 @@ using namespace std;
 
 void coniugato(float& parteRea, float& parteImm){
 
-    if(parteImm != 0){
-
         parteRea = parteRea;
         parteImm = -parteImm;
-
-    }else{
-
-        parteRea = parteRea;
-        parteImm = parteImm;
-
-    }
 }
 
 int main(){
 
-    float a = sqrt(2);
-    float b = 0.12;
-    float c = sqrt(2);
-    float d = 0.12;
-
-    // cout << "differenza: " << setprecision(9) << a << endl;
-    // cout << "differenza: " << setprecision(12) << c << endl;
+    float a = 0.12;
+    float b = -0.1234;
+    float c = 0.12;
+    float d = 0.1233;
 
     ComplexNumberLibrary::ComplexNumber pCoNum1(a, b);
     ComplexNumberLibrary::ComplexNumber pCoNum2(c, d);

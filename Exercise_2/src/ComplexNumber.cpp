@@ -8,7 +8,6 @@ using namespace std;
 namespace ComplexNumberLibrary{
 
 ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
-    // non prevedono copie
     if(pCoNum.parteImmaginaria > 0){
         os << setprecision(7) << pCoNum.parteReale << "+" << setprecision(7) << pCoNum.parteImmaginaria << "i"; // non si mette << endl mai
     }
@@ -18,19 +17,20 @@ ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
     else if(pCoNum.parteImmaginaria == 0){
         os << setprecision(7) << pCoNum.parteReale;
     }
-
     return os;
 }
 
 ComplexNumber operator+(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNum2){
-    // non prevedono copie
+    // operatore somma che fa la somma tra due numeri complessi
 
     ComplexNumber pCoNum(pCoNum1.parteReale + pCoNum2.parteReale, pCoNum1.parteImmaginaria + pCoNum2.parteImmaginaria);
+
+    // ritorna la somma tra i due numeri inseriti
     return pCoNum;
 }
 
 ComplexNumber operator==(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNum2){
-    // non prevedono copie
+    // operatore uguaglianza verifica se i due numeri inseriti sono uguali
 
     float pRe = 0;
     float pIm = 0;
@@ -57,7 +57,9 @@ ComplexNumber operator==(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNu
     }
 
     ComplexNumber pCoNum(pRe, pIm);
+
+    // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali altrimenti ritorna 0
     return pCoNum;
-}
+    }
 }
 
