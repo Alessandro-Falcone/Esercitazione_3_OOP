@@ -13,48 +13,48 @@ void coniugato(float& parteRea, float& parteImm){
 
 int main(){
 
-    float a = 3.67;
-    float b = 5;
-    float c = 3.67;
-    float d = 5;
+    float a = 0.12345;
+    float b = 51;
+    float c = 0.1234;
+    float d = 52;
 
-    ComplexNumberLibrary::ComplexNumber pCoNum1(a, b);
-    ComplexNumberLibrary::ComplexNumber pCoNum2(c, d);
+    ComplexNumberLibrary::ComplexNumber numComp1(a, b);
+    ComplexNumberLibrary::ComplexNumber numComp2(c, d);
 
-    cout << "Numero Complesso 1: " << setprecision(7) << pCoNum1 << endl;
-    cout << "Numero Complesso 2: " << setprecision(7) << pCoNum2 << endl;
+    cout << "il primo numero complesso inserito e': " << setprecision(7) << numComp1 << endl;
+    cout << "il secondo numero complesso inserito e': " << setprecision(7) << numComp2 << endl;
 
-    ComplexNumberLibrary::ComplexNumber sommaComplessa = pCoNum1 + pCoNum2;
-    ComplexNumberLibrary::ComplexNumber numeriUguali = (pCoNum1 == pCoNum2);
+    ComplexNumberLibrary::ComplexNumber sommaComplessa = numComp1 + numComp2;
+    ComplexNumberLibrary::ComplexNumber numeriUguali = (numComp1 == numComp2);
 
-    cout << "la somma dei due numeri inseriti e': " << setprecision(7) << sommaComplessa << endl;
+    cout << "la somma dei due numeri complessi inseriti e': " << setprecision(7) << sommaComplessa << endl;
 
-    if(numeriUguali.parteReale == pCoNum1.parteReale && numeriUguali.parteImmaginaria == pCoNum1.parteImmaginaria
-        && numeriUguali.parteReale == pCoNum2.parteReale && numeriUguali.parteImmaginaria == pCoNum2.parteImmaginaria){
+    if(numeriUguali.parteReale == numComp1.parteReale && numeriUguali.parteImmaginaria == numComp1.parteImmaginaria &&
+       numeriUguali.parteReale == numComp2.parteReale && numeriUguali.parteImmaginaria == numComp2.parteImmaginaria){
 
         cout << "i numeri inseriti sono uguali" << endl;
-        cout << "pCoNum1 e' uguale a pCoNum2: " << numeriUguali << endl;
+        cout << "il primo numero complesso inserito e' uguale al secondo numero complesso inserito: " << numeriUguali << endl;
 
     }else{
 
         cout << "i numeri complessi inseriti non sono uguali" << endl;
     }
 
-    coniugato(pCoNum1.parteReale, pCoNum1.parteImmaginaria);
+    coniugato(numComp1.parteReale, numComp1.parteImmaginaria);
 
-    if(pCoNum1.parteImmaginaria < 0){
+    if(numComp1.parteImmaginaria < 0){
 
-        cout << "Coniugato numero complesso 1: " << setprecision(7) << pCoNum1.parteReale
-             << setprecision(7) << pCoNum1.parteImmaginaria << "i"  << endl;
+        cout << "il coniugato del primo numero complesso e': " << setprecision(7) << numComp1.parteReale
+             << setprecision(7) << numComp1.parteImmaginaria << "i"  << endl;
 
-    }else if(pCoNum1.parteImmaginaria > 0){
+    }else if(numComp1.parteImmaginaria > 0){
 
-        cout << "Coniugato numero complesso 1: " << setprecision(7) << pCoNum1.parteReale << "+"
-             << setprecision(7) << pCoNum1.parteImmaginaria << "i"  << endl;
+        cout << "il coniugato del primo numero complesso e': " << setprecision(7) << numComp1.parteReale << "+"
+             << setprecision(7) << numComp1.parteImmaginaria << "i"  << endl;
 
-    }else if(pCoNum1.parteImmaginaria == 0){
+    }else if(numComp1.parteImmaginaria == 0){
 
-        cout << "Coniugato numero complesso 1: " << setprecision(7) << pCoNum1.parteReale << endl;
+        cout << "il coniugato del primo numero complesso e': " << setprecision(7) << numComp1.parteReale << endl;
     }
 
     return 0;

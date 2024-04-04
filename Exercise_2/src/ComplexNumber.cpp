@@ -7,32 +7,32 @@ using namespace std;
 
 namespace ComplexNumberLibrary{
 
-ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
-    if(pCoNum.parteImmaginaria > 0 && pCoNum.parteReale != 0){
-        os << setprecision(7) << pCoNum.parteReale << "+" << setprecision(7) << pCoNum.parteImmaginaria << "i"; // non si mette << endl mai
+ostream& operator << (ostream& os, const ComplexNumber& numComp){
+    if(numComp.parteImmaginaria > 0 && numComp.parteReale != 0){
+        os << setprecision(7) << numComp.parteReale << "+" << setprecision(7) << numComp.parteImmaginaria << "i"; // non si mette << endl mai
     }
-    else if(pCoNum.parteImmaginaria < 0 && pCoNum.parteReale != 0){
-        os << setprecision(7) << pCoNum.parteReale << setprecision(7) << pCoNum.parteImmaginaria << "i";
+    else if(numComp.parteImmaginaria < 0 && numComp.parteReale != 0){
+        os << setprecision(7) << numComp.parteReale << setprecision(7) << numComp.parteImmaginaria << "i";
     }
-    else if(pCoNum.parteImmaginaria == 0){
-        os << setprecision(7) << pCoNum.parteReale;
+    else if(numComp.parteImmaginaria == 0){
+        os << setprecision(7) << numComp.parteReale;
     }
-    else if(pCoNum.parteReale == 0){
-        os << setprecision(7) << pCoNum.parteImmaginaria << "i";
+    else if(numComp.parteReale == 0){
+        os << setprecision(7) << numComp.parteImmaginaria << "i";
     }
     return os;
 }
 
-ComplexNumber operator+(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNum2){
+ComplexNumber operator+(const ComplexNumber& numComp1, const ComplexNumber& numComp2){
     // operatore somma che fa la somma tra due numeri complessi
 
-    ComplexNumber pCoNum(pCoNum1.parteReale + pCoNum2.parteReale, pCoNum1.parteImmaginaria + pCoNum2.parteImmaginaria);
+    ComplexNumber numComp(numComp1.parteReale + numComp2.parteReale, numComp1.parteImmaginaria + numComp2.parteImmaginaria);
 
     // ritorna la somma tra i due numeri inseriti
-    return pCoNum;
+    return numComp;
 }
 
-ComplexNumber operator==(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNum2){
+ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& numComp2){
     // operatore uguaglianza verifica se i due numeri inseriti sono uguali
 
     float pRe = 0;
@@ -40,30 +40,31 @@ ComplexNumber operator==(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNu
     bool parteRealeUguale = false;
     bool parteImmaginariaUguale = false;
 
-    if(abs(pCoNum1.parteReale) >= 1e-7 &&
-        abs(pCoNum2.parteReale) >= 1e-7 &&
-        (pCoNum1.parteReale - pCoNum2.parteReale) == 0){
+    if(abs(numComp1.parteReale) >= 1e-7 &&
+        abs(numComp2.parteReale) >= 1e-7 &&
+        (numComp1.parteReale - numComp2.parteReale) == 0){
 
        parteRealeUguale = true;
     }
 
-    if(abs(pCoNum1.parteImmaginaria) >= 1e-7 &&
-        abs(pCoNum2.parteImmaginaria) >= 1e-7 &&
-        (pCoNum1.parteImmaginaria - pCoNum2.parteImmaginaria) == 0){
+    if(abs(numComp1.parteImmaginaria) >= 1e-7 &&
+        abs(numComp2.parteImmaginaria) >= 1e-7 &&
+        (numComp1.parteImmaginaria - numComp2.parteImmaginaria) == 0){
 
        parteImmaginariaUguale = true;
     }
 
     if (parteRealeUguale == true && parteImmaginariaUguale == true){
-        pRe = pCoNum1.parteReale;
-        pIm = pCoNum1.parteImmaginaria;
+        pRe = numComp1.parteReale;
+        pIm = numComp1.parteImmaginaria;
     }
 
-    ComplexNumber pCoNum(pRe, pIm);
+    ComplexNumber numComp(pRe, pIm);
 
     // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali altrimenti ritorna l'inizializzazione a zero
-    return pCoNum;
+    return numComp;
 
     }
+
 }
 

@@ -24,11 +24,11 @@ struct ComplexNumber{
     // visibilità a 360 gradi
 };
 
-ostream& operator << (ostream& os, const ComplexNumber& pCoNum);
+ostream& operator << (ostream& os, const ComplexNumber& numComp);
 
-ComplexNumber operator+(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNum2);
+ComplexNumber operator+(const ComplexNumber& numComp1, const ComplexNumber& numComp2);
 
-ComplexNumber operator==(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNum2);
+ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& numComp2);
 
 }
 
