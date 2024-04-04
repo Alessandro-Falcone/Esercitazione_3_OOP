@@ -1,3 +1,5 @@
+#ifndef __COMPLEXNUMBER_H // Header guards
+#define __COMPLEXNUMBER_H
 #include <iostream>
 #include <cmath>
 
@@ -29,3 +31,5 @@ ComplexNumber operator+(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNu
 ComplexNumber operator==(const ComplexNumber& pCoNum1, const ComplexNumber& pCoNum2);
 
 }
+
+#endif

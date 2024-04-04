@@ -8,14 +8,17 @@ using namespace std;
 namespace ComplexNumberLibrary{
 
 ostream& operator << (ostream& os, const ComplexNumber& pCoNum){
-    if(pCoNum.parteImmaginaria > 0){
+    if(pCoNum.parteImmaginaria > 0 && pCoNum.parteReale != 0){
         os << setprecision(7) << pCoNum.parteReale << "+" << setprecision(7) << pCoNum.parteImmaginaria << "i"; // non si mette << endl mai
     }
-    else if(pCoNum.parteImmaginaria < 0){
+    else if(pCoNum.parteImmaginaria < 0 && pCoNum.parteReale != 0){
         os << setprecision(7) << pCoNum.parteReale << setprecision(7) << pCoNum.parteImmaginaria << "i";
     }
     else if(pCoNum.parteImmaginaria == 0){
         os << setprecision(7) << pCoNum.parteReale;
+    }
+    else if(pCoNum.parteReale == 0){
+        os << setprecision(7) << pCoNum.parteImmaginaria << "i";
     }
     return os;
 }
@@ -58,8 +61,9 @@ ComplexNumber operator==(const ComplexNumber& pCoNum1,const ComplexNumber& pCoNu
 
     ComplexNumber pCoNum(pRe, pIm);
 
-    // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali altrimenti ritorna 0
+    // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali altrimenti ritorna l'inizializzazione a zero
     return pCoNum;
+
     }
 }
 
