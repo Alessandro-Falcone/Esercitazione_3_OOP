@@ -37,28 +37,19 @@ ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& num
 
     float pRe = 0;
     float pIm = 0;
-    bool parteRealeUguale = false;
-    bool parteImmaginariaUguale = false;
+    bool uguali = false;
 
-    if(abs(numComp1.parteReale) <= 1e-4 ||
-       abs(numComp2.parteReale) <= 1e-4 ||
-       (abs(numComp1.parteReale) - abs(numComp2.parteReale)) != 0){
-
-       parteRealeUguale = false;
-    }else{
-        parteRealeUguale = true;
-    }
-
-    if(abs(numComp1.parteImmaginaria) <= 1e-4 ||
-       abs(numComp2.parteImmaginaria) <= 1e-4 ||
+    if((abs(numComp1.parteReale) - abs(numComp2.parteReale)) != 0 ||
        (abs(numComp1.parteImmaginaria) - abs(numComp2.parteImmaginaria)) != 0){
 
-       parteImmaginariaUguale = false;
+       uguali = false;
+
     }else{
-       parteImmaginariaUguale = true;
+
+       uguali = true;
     }
 
-    if (parteRealeUguale == true && parteImmaginariaUguale == true){
+    if(uguali == true){
         pRe = numComp1.parteReale;
         pIm = numComp1.parteImmaginaria;
     }
@@ -67,8 +58,6 @@ ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& num
 
     // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali altrimenti ritorna l'inizializzazione a zero
     return numComp;
-
     }
-
 }
 
