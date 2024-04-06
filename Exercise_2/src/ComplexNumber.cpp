@@ -40,17 +40,21 @@ ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& num
     bool parteRealeUguale = false;
     bool parteImmaginariaUguale = false;
 
-    if(abs(numComp1.parteReale) >= 1e-7 &&
-        abs(numComp2.parteReale) >= 1e-7 &&
-        (numComp1.parteReale - numComp2.parteReale) == 0){
+    if(abs(numComp1.parteReale) <= 1e-4 ||
+       abs(numComp2.parteReale) <= 1e-4 ||
+       (abs(numComp1.parteReale) - abs(numComp2.parteReale)) != 0){
 
-       parteRealeUguale = true;
+       parteRealeUguale = false;
+    }else{
+        parteRealeUguale = true;
     }
 
-    if(abs(numComp1.parteImmaginaria) >= 1e-7 &&
-        abs(numComp2.parteImmaginaria) >= 1e-7 &&
-        (numComp1.parteImmaginaria - numComp2.parteImmaginaria) == 0){
+    if(abs(numComp1.parteImmaginaria) <= 1e-4 ||
+       abs(numComp2.parteImmaginaria) <= 1e-4 ||
+       (abs(numComp1.parteImmaginaria) - abs(numComp2.parteImmaginaria)) != 0){
 
+       parteImmaginariaUguale = false;
+    }else{
        parteImmaginariaUguale = true;
     }
 

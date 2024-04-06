@@ -13,10 +13,22 @@ void coniugato(float& parteRea, float& parteImm){
 
 int main(){
 
-    float a = 0.12345;
-    float b = 51;
-    float c = 0.1234;
-    float d = 52;
+    float a = -12.45337838;
+    float b = 3;
+    float c = -0.5656;
+    float d = 3.5;
+
+    cout << setprecision(9) << a << endl;
+    string val;
+    val=to_string(a);
+    cout << "Converted value from float to String using to_string() is : " << val << endl;
+
+    cout << val.size() << endl;
+
+    // if((val.size() - 1) > 7){
+    //     cout << "errore" << endl;
+    //     return -1;
+    // }
 
     ComplexNumberLibrary::ComplexNumber numComp1(a, b);
     ComplexNumberLibrary::ComplexNumber numComp2(c, d);
