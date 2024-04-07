@@ -9,10 +9,10 @@ namespace ComplexNumberLibrary{
 
 ostream& operator << (ostream& os, const ComplexNumber& numComp){
     if(numComp.parteImmaginaria > 0 && numComp.parteReale != 0){
-        os << setprecision(7) << numComp.parteReale << "+" << setprecision(7) << numComp.parteImmaginaria << "i"; // non si mette << endl mai
+        os << setprecision(7)<< numComp.parteReale << "+" << setprecision(7) << numComp.parteImmaginaria << "i"; // non si mette << endl mai
     }
     else if(numComp.parteImmaginaria < 0 && numComp.parteReale != 0){
-        os << setprecision(7) << numComp.parteReale << setprecision(7) << numComp.parteImmaginaria << "i";
+        os << setprecision(7)<<numComp.parteReale << setprecision(7) << numComp.parteImmaginaria << "i";
     }
     else if(numComp.parteImmaginaria == 0){
         os << setprecision(7) << numComp.parteReale;
@@ -39,14 +39,14 @@ ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& num
     float pIm = 0;
     bool uguali = false;
 
-    if((abs(numComp1.parteReale) - abs(numComp2.parteReale)) != 0 ||
-       (abs(numComp1.parteImmaginaria) - abs(numComp2.parteImmaginaria)) != 0){
+    if(abs(abs(numComp1.parteReale) - abs(numComp2.parteReale)) != 0 ||
+       abs(abs(numComp1.parteImmaginaria) - abs(numComp2.parteImmaginaria)) != 0){
 
-       uguali = false;
+        uguali = false;
 
     }else{
 
-       uguali = true;
+        uguali = true;
     }
 
     if(uguali == true){
@@ -56,7 +56,8 @@ ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& num
 
     ComplexNumber numComp(pRe, pIm);
 
-    // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali altrimenti ritorna l'inizializzazione a zero
+    // se i due numeri inseriti sono uguali ritorna uno dei due numeri inseriti in quanto sono uguali
+    // altrimenti ritorna l'inizializzazione a zero
     return numComp;
     }
 }

@@ -18,10 +18,8 @@ struct ComplexNumber{
         parteImmaginaria = pImmaginaria;
         // inizializza gli attributi
     }
-
     // è un metodo va definito all'interno della classe
 
-    // visibilità a 360 gradi
 };
 
 ostream& operator << (ostream& os, const ComplexNumber& numComp);
@@ -31,5 +29,4 @@ ComplexNumber operator+(const ComplexNumber& numComp1, const ComplexNumber& numC
 ComplexNumber operator==(const ComplexNumber& numComp1, const ComplexNumber& numComp2);
 
 }
-
 #endif
