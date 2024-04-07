@@ -70,7 +70,6 @@ int main(){
     if(numeriUguali.parteReale == numComp1.parteReale && numeriUguali.parteImmaginaria == numComp1.parteImmaginaria &&
        numeriUguali.parteReale == numComp2.parteReale && numeriUguali.parteImmaginaria == numComp2.parteImmaginaria){
 
-        cout << "i numeri inseriti sono uguali" << endl;
         cout << "il primo numero complesso inserito e' uguale al secondo numero complesso e il loro valore e': " << numeriUguali << endl;
 
     }else{
