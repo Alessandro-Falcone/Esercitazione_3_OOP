@@ -11,13 +11,21 @@ void coniugato(float& parteRea, float& parteImm){
         parteImm = -parteImm;
 }
 
+// in questa funzione passo i valori a, b, c e d, definiti all'inizio del main,
+// che costituiscono la parte reale ed immaginaria dei due numeri complessi che andrò a definire nel corso del programma,
+// in modo tale da approssimarli per non avere troppe cifre dopo la virgola in quanto
+// sono dei float e possono avere solo un determinato numero di cifre dopo la virgola
 approssimazione(float valore){
 
+    // contatore delle cifre che ogni numero può avere dopo la virgola
     unsigned int cifreDopoLaVirgola = 0;
+    // contatore delle cifre che ogni numero può avere dopo la virgola per essere approssimato correttamente
     unsigned int valoreTrasformato = 0;
 
     if(valore != 0){
         while(abs(valore) <= 1e+6){
+            // il valore assoluto dei valori a, b, c e d che passo alla funzione deve essere minore o uguale di 1e+6
+            // in quanto per i float posso avere solo 7 numeri dopo la virgola più 1 valore per la mantissa
             valore = valore*10;
             cifreDopoLaVirgola++;
         }
@@ -35,19 +43,17 @@ approssimazione(float valore){
 
 int main(){
 
-    float a = 0;
-    float b = -123456.49365432;
-    float c = 0;
-    float d = sqrt(2)/2;
+    float a = 1;
+    float b = 2;
+    float c = 1;
+    float d = 2;
 
-    cout << "il primo numero complesso inserito e': " << setprecision(8) << b << endl;
-
+    // passo i float a, b, c e d alla funzione approssimazione
     approssimazione(a);
     approssimazione(b);
     approssimazione(c);
     approssimazione(d);
 
-    cout << "il primo numero complesso inserito e': " << setprecision(7) << b << endl;
     ComplexNumberLibrary::ComplexNumber numComp1(a, b);
     ComplexNumberLibrary::ComplexNumber numComp2(c, d);
 
@@ -65,7 +71,7 @@ int main(){
        numeriUguali.parteReale == numComp2.parteReale && numeriUguali.parteImmaginaria == numComp2.parteImmaginaria){
 
         cout << "i numeri inseriti sono uguali" << endl;
-        cout << "il primo numero complesso inserito e' uguale al secondo numero complesso inserito: " << numeriUguali << endl;
+        cout << "il primo numero complesso inserito e' uguale al secondo numero complesso e il loro valore e': " << numeriUguali << endl;
 
     }else{
 
@@ -77,7 +83,7 @@ int main(){
     coniugato(numComp2.parteReale, numComp2.parteImmaginaria);
 
     // a questo punto le parti immaginarie di entrambi i numeri complessi sono cambiate in quanto
-    // ho usato la funzione per determinarne il coniugato e li stampo entrambi
+    // ho usato la funzione "coniugato" per determinarne il coniugato e li stampo entrambi
 
     cout << "il coniugato del primo numero complesso e': " << setprecision(7) << numComp1 << endl;
     cout << "il coniugato del secondo numero complesso e': " << setprecision(7) << numComp2 << endl;

@@ -11,7 +11,7 @@ struct ComplexNumber{
     float parteReale;
     float parteImmaginaria;
 
-    ComplexNumber() = default; // se non passo argomenti passo questo
+    ComplexNumber() = default;
 
     ComplexNumber(float pReale, float pImmaginaria){
         parteReale = pReale;
