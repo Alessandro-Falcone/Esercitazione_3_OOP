@@ -8,12 +8,12 @@ using namespace std;
 namespace ComplexNumberLibrary{
 
 struct ComplexNumber{
-    float parteReale;
-    float parteImmaginaria;
+    double parteReale;
+    double parteImmaginaria;
 
     ComplexNumber() = default;
 
-    ComplexNumber(float pReale, float pImmaginaria){
+    ComplexNumber(double pReale, double pImmaginaria){
         parteReale = pReale;
         parteImmaginaria = pImmaginaria;
         // inizializza gli attributi
